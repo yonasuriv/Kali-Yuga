@@ -17,11 +17,11 @@ W='\033[93m[!]\e[0m'        # Warning            # OKYELLOW
 S='\033[92m[✔]\e[0m'       # Success            # OKGREEN
 
 END='\e[0m'
+
 ######################################################################################
 ## Define Directories
 ######################################################################################
 
-DIR_HOME=$HOME
 DIR_CONFIG=$HOME/.config
 DIR_FONTS=$HOME/.local/share/fonts
 DIR_ICONS=$HOME/.local/share/icons
@@ -44,6 +44,8 @@ FONT_MONO="JetBrainsMono Nerd Font Regular 12"
 ## Update the system
 ######################################################################################
 echo -e "$LB$D Updating the filesystem...$LB$END"
+######################################################################################
+
 sudo apt update
 
 ######################################################################################
@@ -60,6 +62,9 @@ sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-de
 echo -e "$LB$D Setting up Environment...$LB$END"
 ######################################################################################
 
+DIR_BASE=$(git rev-parse --show-toplevel)
+DIR_BUILD=$DIR_BASE/build
+
 # Create directories
 mkdir -p $DIR_FONTS $DIR_ICONS $DIR_THEMES $DIR_LIGHTDM $DIR_WALLPAPERS
 
@@ -67,13 +72,13 @@ mkdir -p $DIR_FONTS $DIR_ICONS $DIR_THEMES $DIR_LIGHTDM $DIR_WALLPAPERS
 cp -r $DIR_CONFIG $DIR_CONFIG-backup
 
 #  Configure GENMON Plugin
-bash $DIR_BASE/build/genmon.sh
-mv genmon-15.rc $DIR_BASE/config/xfce4/panel
-mv genmon-16.rc $DIR_BASE/config/xfce4/panel
-mv genmon-17.rc $DIR_BASE/config/xfce4/panel
+bash $DIR_BUILD/genmon.sh
+mv $DIR_BUILD/genmon-15.rc $DIR_BASE/config/xfce4/panel
+mv $DIR_BUILD/genmon-16.rc $DIR_BASE/config/xfce4/panel
+mv $DIR_BUILD/genmon-17.rc $DIR_BASE/config/xfce4/panel
 
 # Copy all required packages
-cp -r home/* $DIR_HOME
+cp -r home/* $HOME/
 cp -r config/* $DIR_CONFIG
 cp -r fonts/* $DIR_FONTS
 cp -r icons/* $DIR_ICONS
@@ -101,6 +106,7 @@ xfconf-query -c xfwm4 -p /general/theme -s $THEME_WM
 ######################################################################################
 echo -e "$LB$D Setting up Icons...$LB$END"
 ######################################################################################
+
 xfconf-query -c xsettings -p /Net/IconThemeName -s $ICON
 
 ######################################################################################
@@ -155,11 +161,11 @@ xfconf-query -c xfce4-terminal -p /misc/paste-notification -s false
 echo -e "$LB$D Setting up Picom...$LB$END"
 ######################################################################################
 
-cd $DIR_BASE
+#cd $DIR_BASE
 #cd ~/Downloads
 #git clone https://github.com/yshui/picom
 #cd picom
-cd $CONFIG/picom
+cd $DIR_CONFIG/picom
 git submodule update --init --recursive
 meson setup --buildtype=release . build
 sudo ninja -C build
@@ -167,7 +173,7 @@ sudo ninja -C build install
 picom --config ~/.config/picom/picom.conf
 xfconf-query -c xfwm4 -p /general/use_compositing -s false
 
-echo -e "[Desktop Entry]\nType=Application\nName=Picom Startup\nComment=Picom Compositor\nExec=picom --config ~/.config/picom/picom.conf\nX-GNOME-Autostart-enabled=true" > $DIR_AUTOSTART/picom.desktop
+sudo echo -e "[Desktop Entry]\nType=Application\nName=Picom Startup\nComment=Picom Compositor\nExec=picom --config ~/.config/picom/picom.conf\nX-GNOME-Autostart-enabled=true" > $DIR_AUTOSTART/picom.desktop
 
 ######################################################################################
 ## Set the lockscreen display manager (LightDM)
@@ -179,10 +185,10 @@ echo -e "$LB$D Setting up the LightDM Lockscreen Display Manager...$LB$END"
 CONFIG_FILE="/etc/lightdm/lightdm-gtk-greeter.conf"
 
 # Create a backup of the original configuration file
-cp -e "$CONFIG_FILE" "${CONFIG_FILE}.bak"
+cp -r "$CONFIG_FILE" "${CONFIG_FILE}.bak"
 
 # Set the preferences
-bash lightdm/update-greeter.sh 
+bash $DIR_BASE/lightdm/update-greeter.sh 
 
 #sudo service lightdm restart
 
@@ -202,10 +208,10 @@ xfce4-panel &
 echo -e "$LB$D Setting up Dock...$LB$END"
 ######################################################################################
 
-cd $DIR_BASE
+#cd $DIR_BASE
 #git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin
 #cd xfce4-docklike-plugin
-cd $CONFIG/docklike
+cd $DIR_CONFIG/docklike
 bash ./autogen.sh --prefix=/usr/local
 make
 sudo make install
@@ -226,21 +232,11 @@ sudo cp src/libdocklike.la /usr/lib/x84_64-linux-gnu/xfce4/panel/plugins/
 echo -e "$LB$D Setting up the EWW Widget...$LB$END"
 ######################################################################################
 
-RUSTUP='export RUSTUP_HOME="$HOME/.local/share/rustup"'
-CARGO='export CARGO_HOME="$HOME/.local/share/cargo"'
-SHELL=~/.zshrc
-
-if ! grep -qF "$RUSTUP" "$SHELL"; then
-    echo >> "$SHELL"
-    echo "$RUSTUP" >> "$SHELL"
-    echo "$CARGO" >> "$SHELL"
-fi
-
 curl --proto '=https' --tlsv1.2  -sSf https://sh.rustup.rs | sh
 source $CARGO/env
 #git clone https://github.com/elkowar/eww
 #cd eww
-cd $CONFIG/eww
+cd $DIR_CONFIG/eww
 cargo build --release
 sudo cp target/release/eww /usr/bin
 eww open --togle sidebar
@@ -251,7 +247,7 @@ eww open --togle sidebar
 echo -e "$LB$D Setting up Findex Search Launcher...$LB$END"
 ######################################################################################
 
-cd $CONFIG/findex | bash installer.sh -y
+cd $DIR_CONFIG/findex | bash installer.sh -y
 
 echo -e "[Desktop Entry]\nType=Application\nName=Findex Search Launcher\nComment=Findex Search Launcher\nExec=findex\nX-GNOME-Autostart-enabled=true\nX-XFCE-Autostart-enabled=true\nX-XFCE-Autostart-Delay=0" > ~/.config/autostart/<program-name>.desktop
 
@@ -261,7 +257,7 @@ echo -e "[Desktop Entry]\nType=Application\nName=Findex Search Launcher\nComment
 echo -e "$LB$D Setting up I3LOCK...$LB$END"
 ######################################################################################
 
-sudo cp $CONFIG/i3-locker/i3-locker-everblush /usr/bin
+sudo cp $DIR_CONFIG/i3-locker/i3-locker-everblush /usr/bin
 
 xfconf-query --create -c xfce4-session -p /general/LockCommand -t string -s "i3-lock-everblush"
 
