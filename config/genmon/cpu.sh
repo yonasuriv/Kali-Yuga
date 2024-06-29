@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-readonly ICON="$HOME/.local/share/icons/panel/cpu.svg"
+readonly ICON="$HOME/.config/xfce4/panel/icons/cpu.svg"
 
 ## Files and Data
 PREV_TOTAL=0

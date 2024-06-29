@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Screen Locker
-Comment=Everblush i3-lock
-Icon=preferences-desktop-screensaver
-Exec=i3-locker-everblush
-NoDisplay=true
-NotShowIn=GNOME;Unity;

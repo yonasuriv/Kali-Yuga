@@ -2,8 +2,8 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="Everblush"/>
-    <property name="IconThemeName" type="string" value="Nordzy-cyan-dark-MOD"/>
+    <property name="ThemeName" type="string" value="Kali-Yuga-Nord"/>
+    <property name="IconThemeName" type="string" value="Kali-Yuga-Nord"/>
   </property>
   <property name="Xft" type="empty">
     <property name="HintStyle" type="empty"/>
@@ -13,7 +13,7 @@
     <property name="DPI" type="int" value="96"/>
   </property>
   <property name="Gtk" type="empty">
-    <property name="CursorThemeName" type="string" value="Radioactive-nord"/>
+    <property name="CursorThemeName" type="string" value="Kali-Yuga-Nord-WC"/>
     <property name="CursorThemeSize" type="empty"/>
     <property name="FontName" type="string" value="Roboto 10"/>
     <property name="MonospaceFontName" type="string" value="JetBrainsMono Nerd Font Mono 10"/>
@@ -22,6 +22,7 @@
     <property name="DecorationLayout" type="string" value=":"/>
   </property>
   <property name="Xfce" type="empty">
+    <property name="SyncThemes" type="empty"/>
     <property name="LastCustomDPI" type="int" value="96"/>
   </property>
 </channel>

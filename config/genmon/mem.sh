@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 MEM=$(printf "%.0f\n" $(free -m | grep Mem | awk '{print ($3/$2)*100}'))
-readonly ICON="$HOME/.local/share/icons/panel/pie-chart.svg"
+
+readonly ICON="$HOME/.config/xfce4/panel/icons/pie-chart.svg"
 
 # Panel
 INFO="<img>${ICON}</img>"

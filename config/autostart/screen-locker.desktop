@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Screen Locker
+Comment=Kali Yuga i3-lock
+Icon=preferences-desktop-screensaver
+Exec=kali-yuga-i3-screen-lock
+NoDisplay=true
+NotShowIn=GNOME;Unity;

@@ -37,9 +37,9 @@ DIR_WALLPAPERS=$HOME/.local/share/wallpapers
 ## Define overall appearance
 ######################################################################################
 
-THEME="Kali-Yuga"
-THEME_WM="Kali-Yuga"
-ICON="Kali-Yuga-Nord"
+THEME="Kali Yuga Nord"
+THEME_WM="Kali Yuga Nord"
+ICON="Kali Yuga Nord"
 CURSOR="Kali Yuga White Nord"
 FONT="Roboto Regular 14"
 FONT_MONO="JetBrainsMono Nerd Font Regular 12"

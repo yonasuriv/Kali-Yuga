@@ -3,7 +3,7 @@
 #genmon script for displaying the time
 #displays date and time on the tooltip
 
-readonly ICON="$HOME/.local/share/icons/panel/clock.svg"
+readonly ICON="$HOME/.config/xfce4/panel/icons/clock.svg"
 
 TIME=`date '+%H:%M'`
 DATE=$(echo "\uf073 ")
