@@ -1,9 +1,9 @@
 #!/bin/bash
 
 RELOAD() {
-    echo "exit" > RELOAD
-    zsh -i RELOAD
-    rm RELOAD
+    echo "exit" > .RELOAD
+    zsh -i .RELOAD
+    rm .RELOAD
 }
 
 # Define a function to execute a script and check for success
@@ -26,17 +26,17 @@ SCRIPTS=(
     #"build/sys/PATH"
     #"build/sys/RUST"
     #"build/usr/GENMON"
-    #"build/usr/SCREENSHOOTER"
-    "build/env/SETUP"
-    "build/appearance/LIGHTDM"
-    "build/appearance/GTK"
-    "build/appearance/WM"
-    "build/appearance/ICONS"
-    "build/appearance/FONTS"
-    "build/appearance/CURSOR"
-    "build/appearance/TERMINAL"
-    "build/appearance/WALLPAPER"
-    "build/appearance/XFCE"
+    "build/usr/SCREENSHOOTER"
+    #"build/env/SETUP"
+    #"build/appearance/LIGHTDM"
+    #"build/appearance/GTK"
+    #"build/appearance/WM"
+    #"build/appearance/ICONS"
+    #"build/appearance/FONTS"
+    #"build/appearance/CURSOR"
+    #"build/appearance/TERMINAL"
+    #"build/appearance/WALLPAPER"
+    #"build/appearance/XFCE"
     #"build/plugins/PICOM"
     #"build/plugins/EWW"
     #"build/plugins/DOCK"
