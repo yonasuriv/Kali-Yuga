@@ -8,7 +8,7 @@ source build/SETTINGS
 echo -e "$LB$D Setting up Dock...$LB$END"
 ######################################################################################
 
-git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin $DIR_BASE/.tmp/docklike-plugin> /dev/null 2>&1
+git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin $DIR_TEMP/docklike-plugin > /dev/null 2>&1
 
 cd $DIR_TMP/docklike-plugin
 

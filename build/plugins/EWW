@@ -8,11 +8,13 @@ source build/SETTINGS
 echo -e "$LB$D Setting up the EWW Widget...$LB$END"
 ######################################################################################
 
-curl --proto '=https' --tlsv1.2  -sSf https://sh.rustup.rs | sh -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
 source $CARGO/env
 
-git clone https://github.com/elkowar/eww $DIR_BASE/.tmp/eww> /dev/null 2>&1
-cd eww
+git clone https://github.com/elkowar/eww $DIR_TEMP/eww > /dev/null 2>&1
+
+cd $DIR_TEMP/eww
 cargo build --release
 sudo cp target/release/eww /usr/bin
 eww open --togle sidebar

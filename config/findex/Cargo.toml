@@ -1,8 +1,0 @@
-[workspace]
-members = ["crates/findex", "crates/findex-daemon", "crates/findex-plugin"]
-exclude = ["plugins/urlopen", "plugins/github-repo", "plugins/cmd"]
-resolver = "2"
-
-[profile.release]
-debug = true
-lto = true
