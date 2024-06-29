@@ -11,5 +11,3 @@ echo -e "$LB$D Setting up Findex Search Launcher...$LB$END"
 git clone https://github.com/mdgaziur/findex $DIR_TEMP/findex > /dev/null 2>&1
 
 bash $DIR_TEMP/findex/installer.sh -y
-
-echo -e "[Desktop Entry]\nType=Application\nName=Search Launcher\nComment=Findex \nExec=findex\nX-GNOME-Autostart-enabled=true\nX-XFCE-Autostart-enabled=true\nX-XFCE-Autostart-Delay=0" > ~/.config/autostart/findex.desktop

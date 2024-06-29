@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Search Launcher
+Comment=Findex 
+Exec=findex
+X-GNOME-Autostart-enabled=true
+X-XFCE-Autostart-enabled=true
+X-XFCE-Autostart-Delay=0
