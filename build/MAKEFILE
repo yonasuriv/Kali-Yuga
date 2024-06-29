@@ -22,6 +22,8 @@ END='\e[0m'
 ## Define Directories
 ######################################################################################
 
+DIR_BASE=$(git rev-parse --show-toplevel)
+
 DIR_CONFIG=$HOME/.config
 DIR_FONTS=$HOME/.local/share/fonts
 DIR_ICONS=$HOME/.local/share/icons
@@ -54,16 +56,13 @@ sudo apt update
 echo -e "$LB$D Installing all required packages and dependencies...$LB$END"
 ######################################################################################
 
-sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson cmake libepoxy-dev libxcb-util-dev asciidoc mugshot xfce4-terminal qt5-style-kvantum qt5-style-kvantum-themes xfce4-dev-tools libstartup-notification0-dev libwnck-3-dev libxfce4ui-2-dev libxfce4panel-2.0-dev alsa-utils brightnessctl jq playerctl libkeybinder-3.0-dev i3lock-color neofetch
+bash $DIR_BASE/build/dependencies.sh
 
 ######################################################################################
 ## Set up the environment
 ######################################################################################
 echo -e "$LB$D Setting up Environment...$LB$END"
 ######################################################################################
-
-DIR_BASE=$(git rev-parse --show-toplevel)
-DIR_BUILD=$DIR_BASE/build
 
 # Create directories
 mkdir -p $DIR_FONTS $DIR_ICONS $DIR_THEMES $DIR_LIGHTDM $DIR_WALLPAPERS
@@ -72,10 +71,10 @@ mkdir -p $DIR_FONTS $DIR_ICONS $DIR_THEMES $DIR_LIGHTDM $DIR_WALLPAPERS
 cp -r $DIR_CONFIG $DIR_CONFIG-backup
 
 #  Configure GENMON Plugin
-bash $DIR_BUILD/genmon.sh
-mv $DIR_BUILD/genmon-15.rc $DIR_BASE/config/xfce4/panel
-mv $DIR_BUILD/genmon-16.rc $DIR_BASE/config/xfce4/panel
-mv $DIR_BUILD/genmon-17.rc $DIR_BASE/config/xfce4/panel
+bash $DIR_BASE/build/plugins/genmon.sh
+mv $DIR_BASE/build/plugins/genmon-15.rc $DIR_BASE/config/xfce4/panel
+mv $DIR_BASE/build/plugins/genmon-16.rc $DIR_BASE/config/xfce4/panel
+mv $DIR_BASE/build/plugins/genmon-17.rc $DIR_BASE/config/xfce4/panel
 
 # Copy all required packages
 cp -r home/* $HOME/
@@ -142,18 +141,21 @@ echo -e "$LB$D Setting up Terminal Configurations...$LB$END"
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/xfce4-terminal 1000
 sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal
 
-# sudo update-alternatives --config x-terminal-emulator # to do it manually if the above commands doesn't work
+# If the above commands doesn't work uncomment the below line
+# sudo update-alternatives --config x-terminal-emulator
 
-xfconf-query -c xfce4-terminal -p /misc/cursor-shape -s "underline"
-xfconf-query -c xfce4-terminal -p /misc/cursor-blink-mode -s "on"
-xfconf-query -c xfce4-terminal -p /misc/copy-on-select -s true
-xfconf-query -c xfce4-terminal -p /misc/scrollback-lines -s -1
-xfconf-query -c xfce4-terminal -p /misc/dynamic-title -s false
-xfconf-query -c xfce4-terminal -p /misc/show-menubar -s false
-xfconf-query -c xfce4-terminal -p /misc/show-toolbar -s false
-xfconf-query -c xfce4-terminal -p /misc/borderless -s false
-xfconf-query -c xfce4-terminal -p /misc/show-scrollbar -s false
-xfconf-query -c xfce4-terminal -p /misc/paste-notification -s false
+# Disabled > moved to terminalrc configuration file inside /config/xfce4/terminal
+
+# xfconf-query -c xfce4-terminal -p /misc/cursor-shape -s "underline"
+# xfconf-query -c xfce4-terminal -p /misc/cursor-blink-mode -s "on"
+# xfconf-query -c xfce4-terminal -p /misc/copy-on-select -s true
+# xfconf-query -c xfce4-terminal -p /misc/scrollback-lines -s -1
+# xfconf-query -c xfce4-terminal -p /misc/dynamic-title -s false
+# xfconf-query -c xfce4-terminal -p /misc/show-menubar -s false
+# xfconf-query -c xfce4-terminal -p /misc/show-toolbar -s false
+# xfconf-query -c xfce4-terminal -p /misc/borderless -s false
+# xfconf-query -c xfce4-terminal -p /misc/show-scrollbar -s false
+# xfconf-query -c xfce4-terminal -p /misc/paste-notification -s false
 
 ######################################################################################
 ## Set up Picom

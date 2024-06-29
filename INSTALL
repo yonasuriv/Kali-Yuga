@@ -1,0 +1,13 @@
+#!/bin/bash
+
+RELOAD() {
+    echo "exit" > RELOAD
+    zsh -i RELOAD
+    rm RELOAD
+}
+
+bash build/PATH && RELOAD
+
+bash build/PACKAGES && RELOAD
+
+bash build/MAKEFILE
