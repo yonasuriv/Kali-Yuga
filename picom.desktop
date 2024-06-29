@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Picom Startup
-Comment=Picom Compositor
-Exec=picom --config ~/.config/picom/picom.conf
-X-GNOME-Autostart-enabled=true
