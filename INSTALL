@@ -6,31 +6,46 @@ RELOAD() {
     rm RELOAD
 }
 
-#bash build/UPDATE && RELOAD
-#bash build/PATH && RELOAD
-#bash build/PACKAGES && RELOAD
+# Define a function to execute a script and check for success
+BUILD() {
+    bash "$1" || exit 1  # Exit if any script fails
+}
 
-bash build/plugins/GENMON
+CLEAN() {
+    rm -rf .tmp 
+}
 
-bash build/ENVIRONMENT
-bash build/LIGHTDM
+REBOOT() {
+    sudo reboot
+}
 
-# Appearance
+# List of SCRIPTS that need reloading after execution
+SCRIPTS=(
+    #"bash build/UPDATE"
+    #"bash build/PATH"
+    #"bash build/PACKAGES"
+    "build/plugins/GENMON"
+    "build/RUST"
+    "build/ENVIRONMENT"
+    "build/LIGHTDM"
+    "build/appearance/GTK"
+    "build/appearance/WM"
+    "build/appearance/ICONS"
+    "build/appearance/FONTS"
+    "build/appearance/CURSOR"
+    "build/appearance/TERMINAL"
+    "build/appearance/XFCE"
+    "build/plugins/PICOM"
+    "build/plugins/EWW"
+    "build/plugins/DOCK"
+    "build/plugins/FINDEX"
+    "build/plugins/SCREENLOCK"
+)
 
-bash build/appearance/GTK
-bash build/appearance/WM
-bash build/appearance/ICONS
-bash build/appearance/FONTS
-bash build/appearance/CURSOR
-bash build/appearance/TERMINAL
-bash build/appearance/XFCE
+# Execute each script and reload only once at the end
+for SCRIPT in "${SCRIPTS[@]}"; do
+    BUILD "$SCRIPT"
+done
 
-# Plugins
-
-bash build/plugins/PICOM
-bash build/plugins/EWW
-bash build/plugins/DOCK
-bash build/plugins/FINDEX
-bash build/plugins/SCREENLOCK
-
-#rm -rf .tmp
+# Reload once after all scripts have been executed
+RELOAD

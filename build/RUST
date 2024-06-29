@@ -3,14 +3,11 @@
 source build/SETTINGS
 
 ######################################################################################
-## Configure Eww Widget
+## Install Rust
 ######################################################################################
-echo -e "$LB$D Setting up the EWW Widget...$LB$END"
+echo -e "$LB$D Setting up Rust...$LB$END"
 ######################################################################################
 
-git clone https://github.com/elkowar/eww $DIR_TMP/eww > /dev/null 2>&1
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-cd $DIR_TMP/eww
-cargo build --release
-sudo cp target/release/eww /usr/bin
-eww open --togle sidebar
+source $CARGO/env
