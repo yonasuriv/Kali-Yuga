@@ -1,64 +1,6 @@
 #!/bin/bash
 
 ######################################################################################
-## Define Colors and Style Variables
-######################################################################################
-
-LB='\n'                     # Line Break
-
-D='\033[36m💎 '             # Title Project      # CYAN
-M='\033[0;32m[#]\e[0m'       # Title Module       # GREEN
-
-I='\033[2m[*]\e[0m'         # Minor Information  # CURSIVE
-T='\033[94m[÷]\e[0m'        # Major Information  # OKCYAN
-
-E='\033[91m[E]\e[0m'        # Error              # OKBRED
-W='\033[93m[!]\e[0m'        # Warning            # OKYELLOW
-S='\033[92m[✔]\e[0m'       # Success            # OKGREEN
-
-END='\e[0m'
-
-######################################################################################
-## Define Directories
-######################################################################################
-
-DIR_BASE=$(git rev-parse --show-toplevel)
-
-DIR_CONFIG=$HOME/.config
-DIR_FONTS=$HOME/.local/share/fonts
-DIR_ICONS=$HOME/.local/share/icons
-DIR_THEMES=$HOME/.local/share/themes
-DIR_LIGHTDM=$HOME/.local/share/lightdm
-DIR_WALLPAPERS=$HOME/.local/share/wallpapers
-
-######################################################################################
-## Define overall appearance
-######################################################################################
-
-THEME="Everblush"
-THEME_WM="Everblush-xfwm"
-ICON="Nordzy-cyan-dark-MOD"
-CURSOR="Radioactive-nord"
-FONT="Roboto Regular 14"
-FONT_MONO="JetBrainsMono Nerd Font Regular 12"
-
-######################################################################################
-## Update the system
-######################################################################################
-echo -e "$LB$D Updating the filesystem...$LB$END"
-######################################################################################
-
-sudo apt update
-
-######################################################################################
-## Install all dependencies beforehand
-######################################################################################
-echo -e "$LB$D Installing all required packages and dependencies...$LB$END"
-######################################################################################
-
-bash $DIR_BASE/build/dependencies.sh
-
-######################################################################################
 ## Set up the environment
 ######################################################################################
 echo -e "$LB$D Setting up Environment...$LB$END"
@@ -71,10 +13,10 @@ mkdir -p $DIR_FONTS $DIR_ICONS $DIR_THEMES $DIR_LIGHTDM $DIR_WALLPAPERS
 cp -r $DIR_CONFIG $DIR_CONFIG-backup
 
 #  Configure GENMON Plugin
-bash $DIR_BASE/build/plugins/genmon.sh
-mv $DIR_BASE/build/plugins/genmon-15.rc $DIR_BASE/config/xfce4/panel
-mv $DIR_BASE/build/plugins/genmon-16.rc $DIR_BASE/config/xfce4/panel
-mv $DIR_BASE/build/plugins/genmon-17.rc $DIR_BASE/config/xfce4/panel
+bash $DIR_BASE/build/GENMON
+mv $DIR_BASE/build/genmon-15.rc $DIR_BASE/config/xfce4/panel
+mv $DIR_BASE/build/genmon-16.rc $DIR_BASE/config/xfce4/panel
+mv $DIR_BASE/build/genmon-17.rc $DIR_BASE/config/xfce4/panel
 
 # Copy all required packages
 cp -r home/* $HOME/

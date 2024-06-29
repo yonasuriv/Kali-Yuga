@@ -4,7 +4,10 @@ RELOAD() {
     echo "exit" > RELOAD
     zsh -i RELOAD
     rm RELOAD
+    SOURCE build/VARS
 }
+
+bash build/UPDATE && RELOAD
 
 bash build/PATH && RELOAD
 
