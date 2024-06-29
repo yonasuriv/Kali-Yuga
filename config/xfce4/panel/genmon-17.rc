@@ -1,6 +1,5 @@
-Command=~/.config/genmon/mem.sh
+Command=/home/jtzk/.config/genmon/mem.sh
 UseLabel=0
 Text=(genmon)
 UpdatePeriod=750
 Font=Roboto 10
-

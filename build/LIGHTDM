@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source build/SETTINGS
+
+######################################################################################
+## Set the lockscreen display manager (LightDM)
+######################################################################################
+echo -e "$LB$D Setting up the LightDM Lockscreen Display Manager...$LB$END"
+######################################################################################
+
+# Path to the LightDM GTK+ Greeter configuration file
+CONFIG_FILE="/etc/lightdm/lightdm-gtk-greeter.conf"
+
+# Create a backup of the original configuration file
+cp -r "$CONFIG_FILE" "${CONFIG_FILE}.bak"
+
+# Set the preferences
+bash $DIR_BASE/lightdm/update-greeter.sh 
+
+#sudo service lightdm restart

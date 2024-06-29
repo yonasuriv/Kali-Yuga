@@ -6,10 +6,30 @@ RELOAD() {
     rm RELOAD
 }
 
-bash build/UPDATE && RELOAD
+#bash build/UPDATE && RELOAD
+#bash build/PATH && RELOAD
+#bash build/PACKAGES && RELOAD
 
-bash build/PATH && RELOAD
+bash build/plugins/GENMON
 
-bash build/PACKAGES && RELOAD
+bash build/ENVIRONMENT
+bash build/LIGHTDM
 
-#bash build/MAKEFILE
+# Appearance
+
+bash build/appearance/GTK
+bash build/appearance/WM
+bash build/appearance/ICONS
+bash build/appearance/FONTS
+bash build/appearance/CURSOR
+bash build/appearance/TERMINAL
+bash build/appearance/XFCE
+bash build/appearance/DOCK
+
+# Plugins
+
+bash build/plugins/PICOM
+bash build/plugins/EWW
+bash build/plugins/FINDEX
+bash build/plugins/SCREENLOCK
+

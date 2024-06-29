@@ -1,6 +1,5 @@
-Command=~/.config/genmon/datetime.sh
+Command=/home/jtzk/.config/genmon/datetime.sh
 UseLabel=0
 Text=(genmon)
 UpdatePeriod=1000
 Font=Roboto 10
-

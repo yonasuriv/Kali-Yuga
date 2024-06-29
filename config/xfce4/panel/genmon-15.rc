@@ -1,6 +1,5 @@
-Command=~/.config/genmon/cpu.sh
+Command=/home/jtzk/.config/genmon/cpu.sh
 UseLabel=0
 Text=(genmon)
 UpdatePeriod=1000
 Font=Roboto 10
-

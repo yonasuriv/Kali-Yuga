@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source build/SETTINGS
+
+######################################################################################
+#  Configure I3LOCK
+######################################################################################
+echo -e "$LB$D Setting up I3LOCK...$LB$END"
+######################################################################################
+
+sudo cp $DIR_CONFIG/i3-locker/i3-locker-everblush /usr/bin
+
+xfconf-query --create -c xfce4-session -p /general/LockCommand -t string -s "i3-lock-everblush"
+
+# Disable light-locker screen from startup
+sudo rm -rf /etc/xdg/autostart/light-locker.desktop

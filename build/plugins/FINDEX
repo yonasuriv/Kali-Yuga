@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source build/SETTINGS
+
+######################################################################################
+#  Configure Findex Search Launcher
+######################################################################################
+echo -e "$LB$D Setting up Findex Search Launcher...$LB$END"
+######################################################################################
+
+cd $DIR_CONFIG/findex | bash installer.sh -y
+
+echo -e "[Desktop Entry]\nType=Application\nName=Findex Search Launcher\nComment=Findex Search Launcher\nExec=findex\nX-GNOME-Autostart-enabled=true\nX-XFCE-Autostart-enabled=true\nX-XFCE-Autostart-Delay=0" > ~/.config/autostart/<program-name>.desktop

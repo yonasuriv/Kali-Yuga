@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Get the base directory
+DIR_BASE=$(git rev-parse --show-toplevel)
+
 # Get the current username
 USER=$(whoami)
 
@@ -32,3 +35,7 @@ echo "UseLabel=0" >> $MEMRC
 echo "Text=(genmon)" >> $MEMRC
 echo "UpdatePeriod=750" >> $MEMRC
 echo "Font=Roboto 10" >> $MEMRC
+
+mv genmon-15.rc $DIR_BASE/config/xfce4/panel
+mv genmon-16.rc $DIR_BASE/config/xfce4/panel
+mv genmon-17.rc $DIR_BASE/config/xfce4/panel
