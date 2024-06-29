@@ -9,5 +9,5 @@ echo -e "$LB$D Setting up XFCE Panel...$LB$END"
 ######################################################################################
 
 xfce4-panel --quit
-#pkill xfconf
+pkill xfconf
 xfce4-panel &
