@@ -2054,8 +2054,8 @@ headerbar button.suggested-action.flat {
 headerbar button.suggested-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #t505666;
-  border-color: ##363d3f;
+  background-color: #505666;
+  border-color: #363d3f;
 }
 
 headerbar button.suggested-action:active, headerbar button.suggested-action:checked {
@@ -4990,7 +4990,7 @@ button.emoji-section:last-child {
 
 .emoji widget {
   border-radius: 3px;
-  transition: all 0.1s cubic-bezier(34, 41, 43.2, 1);
+  transition: all 0.1s cubic-bezier(0.34, 0.41, 0.43, 1);
 }
 
 terminal-window.background.csd,
@@ -7643,7 +7643,7 @@ window.budgie-popover:not(.csd) > frame.container > border {
 }
 
 .workspace-switcher .workspace-item {
-  transition: all 0.2s cubic-bezier(34, 41, 43.2, 1);
+  transition: all 0.2s cubic-bezier(0.34, 0.41, 0.43, 1);
 }
 
 .workspace-switcher .workspace-item.current-workspace {
@@ -7782,7 +7782,7 @@ popover.background.places-menu row {
 }
 
 .budgie-panel {
-  transition: background-color 0.2s cubic-bezier(34, 41, 43.2, 1);
+  transition: background-color 0.2s cubic-bezier(0.34, 0.41, 0.43, 1);
   background-color: #181f21;
   color: #dadada;
   font-weight: 500;

@@ -14,22 +14,10 @@ mkdir -p $DIR_TMP $DIR_LIGHTDM $DIR_WALLPAPERS # $DIR_FONTS $DIR_ICONS $DIR_THEM
 # Generate a backup of the config directory
 cp -r $DIR_CONFIG $DIR_CONFIG-backup
 
-# Configure GENMON Plugin
-
-# Moved to individual script under build/plugins
-
-# bash "$DIR_BASE/build/GENMON"
-# mv $DIR_BASE/build/genmon-15.rc $DIR_BASE/config/xfce4/panel
-# mv $DIR_BASE/build/genmon-16.rc $DIR_BASE/config/xfce4/panel
-# mv $DIR_BASE/build/genmon-17.rc $DIR_BASE/config/xfce4/panel
-
 # Copy all required packages
 cp -r $DIR_BASE/home/. $HOME
 cp -r $DIR_BASE/config/* $DIR_CONFIG
-#cp -r $DIR_BASE/fonts/* $DIR_FONTS
-sudo cp -r $DIR_BASE/fonts/* /usr/share/fonts
-#cp -r $DIR_BASE/icons/* $DIR_ICONS
-sudo cp -r $DIR_BASE/icons/* /usr/share/icons
-#cp -r $DIR_BASE/themes/* $DIR_THEMES
-sudo cp -r $DIR_BASE/themes/* /usr/share/themes
 cp -r $DIR_BASE/wallpapers/* $DIR_WALLPAPERS
+sudo cp -r $DIR_BASE/fonts/* $DIR_FONTS
+sudo cp -r $DIR_BASE/icons/* $DIR_ICONS
+sudo cp -r $DIR_BASE/themes/* $DIR_THEMES

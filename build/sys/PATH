@@ -11,9 +11,9 @@ if ! grep -qF "$RUSTUP" "$SHELL"; then
     echo "# RUST Configuration" >> "$SHELL"
     echo "$RUSTUP" >> "$SHELL"
     echo "$CARGO" >> "$SHELL"
-    
-    source "$CARGO_HOME/env"
-    export QT_QPA_PLATFORMTHEME="qt5ct"
-    export QT_AUTO_SCREEN_SCALE_FACTOR=0
-    export PATH="$PATH:$HOME/.local/bin"
+    echo >> "$SHELL"
+    echo 'source "$CARGO_HOME/env"' >> "$SHELL"
+    echo 'export QT_QPA_PLATFORMTHEME="qt5ct"' >> "$SHELL"
+    echo 'export QT_AUTO_SCREEN_SCALE_FACTOR=0' >> "$SHELL"
+    echo 'export PATH="$PATH:$HOME/.local/bin"' >> "$SHELL"
 fi

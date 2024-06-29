@@ -2054,8 +2054,8 @@ headerbar button.suggested-action.flat {
 headerbar button.suggested-action:hover {
   background-clip: border-box;
   color: white;
-  background-color: #t505666;
-  border-color: ##363d3f;
+  background-color: #505666;
+  border-color: #363d3f;
 }
 
 headerbar button.suggested-action:active, headerbar button.suggested-action:checked {

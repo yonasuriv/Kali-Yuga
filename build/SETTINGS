@@ -29,9 +29,9 @@ DIR_BASE=$(git rev-parse --show-toplevel)
 DIR_TMP=$DIR_BASE/.tmp
 
 DIR_CONFIG=$HOME/.config
-DIR_FONTS=$HOME/.local/share/fonts
-DIR_ICONS=$HOME/.local/share/icons
-DIR_THEMES=$HOME/.local/share/themes
+DIR_FONTS=/usr/share/fonts		 # $HOME/.local/share/fonts
+DIR_ICONS=/usr/share/icons		 # $HOME/.local/share/icons
+DIR_THEMES=/usr/share/themes		 # $HOME/.local/share/themes
 DIR_LIGHTDM=$HOME/.local/share/lightdm
 DIR_WALLPAPERS=$HOME/.local/share/wallpapers
 
@@ -39,9 +39,9 @@ DIR_WALLPAPERS=$HOME/.local/share/wallpapers
 ## Define overall appearance
 ######################################################################################
 
-THEME="Kali Yuga Nord"
-THEME_WM="Kali Yuga Nord"
-ICON="Kali Yuga Nord"
+THEME="Kali-Yuga-Nord"
+THEME_WM=$THEME
+ICON=$THEME
 CURSOR="Kali Yuga White Nord"
 FONT="Roboto Regular 14"
 FONT_MONO="JetBrainsMono Nerd Font Regular 12"
