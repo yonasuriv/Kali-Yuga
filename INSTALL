@@ -33,4 +33,4 @@ bash build/plugins/EWW
 bash build/plugins/FINDEX
 bash build/plugins/SCREENLOCK
 
-rm -rf .tmp
+#rm -rf .tmp

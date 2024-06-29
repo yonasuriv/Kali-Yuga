@@ -9,7 +9,7 @@ echo -e "$LB$D Setting up Environment...$LB$END"
 ######################################################################################
 
 # Create directories
-mkdir -p $DIR_FONTS $DIR_ICONS $DIR_THEMES $DIR_LIGHTDM $DIR_WALLPAPERS
+mkdir -p $DIR_TMP $DIR_FONTS $DIR_ICONS $DIR_THEMES $DIR_LIGHTDM $DIR_WALLPAPERS
 
 # Generate a backup of the config directory
 cp -r $DIR_CONFIG $DIR_CONFIG-backup
