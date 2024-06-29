@@ -8,12 +8,13 @@ source build/SETTINGS
 echo -e "$LB$D Setting up Picom...$LB$END"
 ######################################################################################
 
-cd $DIR_CONFIG/picom
+git clone https://github.com/yshui/picom $DIR_BASE/.tmp/picom> /dev/null 2>&1
+
+cd $DIR_TMP/picom
 git submodule update --init --recursive
 meson setup --buildtype=release . build
 sudo ninja -C build
 sudo ninja -C build install
-sudo cp $DIR_BASE/build/plugins/picom.conf ~/.config/picom/picom.conf
 
 cat <<EOF > ~/.config/picom/picom.conf
 #################################

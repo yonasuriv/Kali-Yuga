@@ -8,10 +8,10 @@ source build/SETTINGS
 echo -e "$LB$D Setting up Dock...$LB$END"
 ######################################################################################
 
-#cd $DIR_BASE
-#git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin
-#cd xfce4-docklike-plugin
-cd $DIR_CONFIG/docklike
+git clone https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin $DIR_BASE/.tmp/docklike-plugin> /dev/null 2>&1
+
+cd $DIR_TMP/docklike-plugin
+
 bash ./autogen.sh --prefix=/usr/local
 make
 sudo make install

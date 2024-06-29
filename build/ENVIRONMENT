@@ -24,7 +24,7 @@ cp -r $DIR_CONFIG $DIR_CONFIG-backup
 # mv $DIR_BASE/build/genmon-17.rc $DIR_BASE/config/xfce4/panel
 
 # Copy all required packages
-cp -r $DIR_BASE/resources/* $HOME
+cp -r $DIR_BASE/home/. $HOME
 cp -r $DIR_BASE/config/* $DIR_CONFIG
 cp -r $DIR_BASE/fonts/* $DIR_FONTS
 cp -r $DIR_BASE/icons/* $DIR_ICONS

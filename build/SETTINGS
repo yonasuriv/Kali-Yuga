@@ -24,6 +24,8 @@ END='\e[0m'
 
 DIR_BASE=$(git rev-parse --show-toplevel)
 
+DIR_TMP=$DIR_BASE/.tmp
+
 DIR_CONFIG=$HOME/.config
 DIR_FONTS=$HOME/.local/share/fonts
 DIR_ICONS=$HOME/.local/share/icons
