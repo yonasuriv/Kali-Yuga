@@ -9,7 +9,12 @@ echo -e "$LB$D Setting up Environment...$LB$END"
 ######################################################################################
 
 # Create directories
-mkdir -p $DIR_TMP $DIR_LIGHTDM $DIR_WALLPAPERS # $DIR_FONTS $DIR_ICONS $DIR_THEMES 
+mkdir -p $DIR_TMP $DIR_LIGHTDM $DIR_MEDIA $DIR_WALLPAPERS $DIR_SCREENSHOTS # $DIR_FONTS $DIR_ICONS $DIR_THEMES 
+
+mv $HOME/Pictures $DIR_MEDIA
+mv $HOME/Music $DIR_MEDIA
+mv $HOME/Videos $DIR_MEDIA
+mv $HOME/Templates $DIR_MEDIA
 
 # Generate a backup of the config directory
 cp -r $DIR_CONFIG $DIR_CONFIG-backup
@@ -18,6 +23,7 @@ cp -r $DIR_CONFIG $DIR_CONFIG-backup
 cp -r $DIR_BASE/home/. $HOME
 cp -r $DIR_BASE/config/* $DIR_CONFIG
 cp -r $DIR_BASE/wallpapers/* $DIR_WALLPAPERS
+
 sudo cp -r $DIR_BASE/fonts/* $DIR_FONTS
 sudo cp -r $DIR_BASE/icons/* $DIR_ICONS
 sudo cp -r $DIR_BASE/themes/* $DIR_THEMES

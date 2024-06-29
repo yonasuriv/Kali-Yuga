@@ -28,12 +28,15 @@ DIR_BASE=$(git rev-parse --show-toplevel)
 
 DIR_TMP=$DIR_BASE/.tmp
 
+DIR_MEDIA=$HOME/Media
+DIR_WALLPAPERS=$DIR_MEDIA/Wallpapers
+DIR_SCREENSHOTS=$DIR_MEDIA/Screenshots
+
 DIR_CONFIG=$HOME/.config
 DIR_FONTS=/usr/share/fonts		 # $HOME/.local/share/fonts
 DIR_ICONS=/usr/share/icons		 # $HOME/.local/share/icons
 DIR_THEMES=/usr/share/themes		 # $HOME/.local/share/themes
 DIR_LIGHTDM=$HOME/.local/share/lightdm
-DIR_WALLPAPERS=$HOME/.local/share/wallpapers
 
 ######################################################################################
 ## Define overall appearance
