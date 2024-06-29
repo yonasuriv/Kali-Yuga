@@ -10,4 +10,4 @@ echo -e "$LB$D Setting up Rust...$LB$END"
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
-source $CARGO/env
+#source $CARGO/env
