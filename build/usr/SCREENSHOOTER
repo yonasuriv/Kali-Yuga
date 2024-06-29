@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source build/SETTINGS
+
+# Define the path of the original file
+FILE="$DIR_CONFIG/xfce4/xfce4-screenshooter"
+
+# Define the path where the modified file will be saved
+FILE_MOD="$DIR_BASE/config/xfce4/xfce4-screenshooter"
+
+# Replace 'kali' with the logged in user's name and save the output
+sed -i "s|screenshot_dir=file:/home/kali/Pictures|screenshot_dir=file:/home/$USER/Screenshots|" "$FILE_MOD"

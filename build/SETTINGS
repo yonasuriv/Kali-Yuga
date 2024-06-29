@@ -22,6 +22,8 @@ END='\e[0m'
 ## Define Directories
 ######################################################################################
 
+USER=$(whoami)
+
 DIR_BASE=$(git rev-parse --show-toplevel)
 
 DIR_TMP=$DIR_BASE/.tmp

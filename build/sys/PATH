@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR_BASE=$(git rev-parse --show-toplevel)
+source build/SETTINGS
 
 RUSTUP='export RUSTUP_HOME="$HOME/.local/share/rustup"'
 CARGO='export CARGO_HOME="$HOME/.local/share/cargo"'

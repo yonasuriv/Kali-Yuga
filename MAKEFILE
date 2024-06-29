@@ -21,13 +21,14 @@ REBOOT() {
 
 # List of SCRIPTS that need reloading after execution
 SCRIPTS=(
-    #"bash build/UPDATE"
-    #"bash build/PATH"
-    #"bash build/PACKAGES"
-    "build/plugins/GENMON"
-    #"build/RUST"
-    "build/ENVIRONMENT"
-    "build/LIGHTDM"
+    #"build/sys/UPDATE"
+    #"build/sys/PATH"
+    #"build/sys/PACKAGES"
+    #"build/sys/RUST"
+    "build/usr/GENMON"
+    "build/usr/SCREENSHOOTER"
+    "build/env/SETUPE"
+    "build/appearance/LIGHTDM"
     "build/appearance/GTK"
     "build/appearance/WM"
     "build/appearance/ICONS"
@@ -50,3 +51,9 @@ done
 
 # Reload once after all scripts have been executed
 RELOAD
+
+# Remove .tmp folder
+#CLEAN
+
+# Reboot system to load all the changes
+#REBOOT

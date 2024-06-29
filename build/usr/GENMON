@@ -1,10 +1,6 @@
 #!/bin/bash
 
-# Get the base directory
-DIR_BASE=$(git rev-parse --show-toplevel)
-
-# Get the current username
-USER=$(whoami)
+source build/SETTINGS
 
 # Define the file path
 CPURC="genmon-15.rc"
