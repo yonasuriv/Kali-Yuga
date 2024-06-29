@@ -8,6 +8,6 @@ source build/SETTINGS
 echo -e "$LB$D Setting up Findex Search Launcher...$LB$END"
 ######################################################################################
 
-git clone https://github.com/mdgaziur/findex $DIR_TEMP/findex > /dev/null 2>&1
+git clone https://github.com/mdgaziur/findex $DIR_TMP/findex > /dev/null 2>&1
 
-bash $DIR_TEMP/findex/installer.sh -y
+bash $DIR_TMP/findex/installer.sh -y

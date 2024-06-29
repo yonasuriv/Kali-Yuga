@@ -8,7 +8,7 @@ source build/SETTINGS
 echo -e "$LB$D Setting up Picom...$LB$END"
 ######################################################################################
 
-git clone https://github.com/yshui/picom $DIR_TEMP/picom > /dev/null 2>&1
+git clone https://github.com/yshui/picom $DIR_TMP/picom > /dev/null 2>&1
 
 cd $DIR_TMP/picom
 

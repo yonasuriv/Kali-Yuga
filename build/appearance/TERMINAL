@@ -8,7 +8,7 @@ source build/SETTINGS
 echo -e "$LB$D Setting up Terminal Configurations...$LB$END"
 ######################################################################################
 
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/xfce4-terminal 1000
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/xfce4-terminal 1000 > /dev/null 2>&1
 sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal > /dev/null 2>&1
 
 # If the above commands doesn't work uncomment the below line

@@ -12,9 +12,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 source $CARGO/env
 
-git clone https://github.com/elkowar/eww $DIR_TEMP/eww > /dev/null 2>&1
+git clone https://github.com/elkowar/eww $DIR_TMP/eww > /dev/null 2>&1
 
-cd $DIR_TEMP/eww
+cd $DIR_TMP/eww
 cargo build --release
 sudo cp target/release/eww /usr/bin
 eww open --togle sidebar
