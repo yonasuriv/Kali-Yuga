@@ -7,7 +7,7 @@ FILE="$DIR_CONFIG/bookmarks"
 
 # Create or overwrite the file with the desired content
 cat << EOF > "$FILE"
-file:///home/$USER/Downloads
+file:///home/$USER/Media
 file:///home/$USER/Documents
-file:///home/$USER/Media/Screenshots
+file:///home/$USER/Downloads
 EOF

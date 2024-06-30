@@ -38,6 +38,12 @@ DIR_ICONS=/usr/share/icons		 # $HOME/.local/share/icons
 DIR_THEMES=/usr/share/themes		 # $HOME/.local/share/themes
 DIR_LIGHTDM=$HOME/.local/share/lightdm
 
+APPEARANCE=$DIR_BASE/build/appearance
+ENV=$DIR_BASE/build/env
+PLUGINS=$DIR_BASE/build/plugins
+SYS=$DIR_BASE/build/sys
+USR=$DIR_BASE/build/usr
+
 ######################################################################################
 ## Define overall appearance
 ######################################################################################
@@ -45,6 +51,6 @@ DIR_LIGHTDM=$HOME/.local/share/lightdm
 THEME="Kali-Yuga-Nord"
 THEME_WM=$THEME
 ICON=$THEME
-CURSOR="Kali Yuga White Nord"
+CURSOR="Kali-Yuga-Nord-WC"
 FONT="Roboto Regular 14"
 FONT_MONO="JetBrainsMono Nerd Font Regular 12"
