@@ -17,4 +17,4 @@ sudo cp -r "$CONFIG_FILE" "${CONFIG_FILE}.bak"
 # Set the preferences
 bash $DIR_BASE/lightdm/update-greeter.sh 
 
-#sudo service lightdm restart
+sudo service lightdm restart
