@@ -31,14 +31,11 @@ BUILD() {
     for file in "$DIRECTORY"/*; do
         # Check if the file is executable and not the current script itself
         if [ -x "$file" ] && [ -f "$file" ] && [[ "$file" != "$CURRENT_SCRIPT" ]]; then
-            echo "Running $file..."
             # Execute the file
             "$file"
             # Check the exit status of the command
             if [ $? -ne 0 ]; then
                 echo "Error: $file exited with a non-zero status."
-            else
-                echo "$file ran successfully."
             fi
         fi
     done

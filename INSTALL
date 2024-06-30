@@ -28,10 +28,10 @@ SCRIPTS=(
     #"$CORE/PATH"
     #"$CORE/RUST"
     
-    #"$CORE/SETUP"
-    #"$ENV/SETUP"
-    "$USR/SETUP"
-    #"$APPEARANCE/SETUP"
+    #"$CORE/MAKEFILE"
+    "$ENV/SETUP"
+    "$USR/MAKEFILE"
+    "$APPEARANCE/MAKEFILE"
     
     #"$APPEARANCE/GTK"
     #"$APPEARANCE/WM"

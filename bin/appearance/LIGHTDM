@@ -17,4 +17,4 @@ sudo cp -r "$CONFIG_FILE" "${CONFIG_FILE}.bak"
 # Set the preferences
 bash $LIB/lightdm/UPDATE
 
-sudo service lightdm restart
+#sudo service lightdm restart

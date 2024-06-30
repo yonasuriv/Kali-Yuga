@@ -11,10 +11,10 @@ echo -e "$LB$D Setting up Environment...$LB$END"
 # Create directories
 mkdir -p $TMP $USR_LIGHTDM $USR_MEDIA $USR_WALLPAPERS $USR_SCREENSHOTS # $USR_FONTS $USR_ICONS $USR_THEMES 
 
-mv $HOME/Pictures $USR_MEDIA
-mv $HOME/Music $USR_MEDIA
-mv $HOME/Videos $USR_MEDIA
-mv $HOME/Templates $USR_MEDIA
+mv -r $HOME/Pictures $USR_MEDIA 2>/dev/null
+mv -r $HOME/Music $USR_MEDIA 2>/dev/null
+mv -r $HOME/Videos $USR_MEDIA 2>/dev/null
+mv -r $HOME/Templates $USR_MEDIA 2>/dev/null
 
 # Generate a backup of the config directory
 cp -r $USR_CONFIG $USR_CONFIG-backup
