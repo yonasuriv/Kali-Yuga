@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source build/SETTINGS
+
+# Define the path of the original file
+FILE="$DIR_CONFIG/bookmarks"
+
+# Create or overwrite the file with the desired content
+cat << EOF > "$FILE"
+file:///home/$USER/Downloads
+file:///home/$USER/Documents
+file:///home/$USER/Media/Screenshots
+EOF

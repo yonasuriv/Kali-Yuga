@@ -27,6 +27,7 @@ SCRIPTS=(
     #"build/sys/RUST"
     "build/usr/GENMON"
     "build/usr/SCREENSHOOTER"
+    "build/usr/BOOKMARKS"
     "build/env/SETUP"
     #"build/appearance/WALLPAPER"
     #"build/appearance/GTK"
