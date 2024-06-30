@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source etc/SETTINGS
+
 RELOAD() {
     echo "exit" > .RELOAD
     zsh -i .RELOAD
@@ -21,28 +23,30 @@ REBOOT() {
 
 # List of SCRIPTS that need reloading after execution
 SCRIPTS=(
-    #"build/sys/UPDATE"
-    #"build/sys/PACKAGES"
-    #"build/sys/PATH"
-    #"build/sys/RUST"
-    #"build/usr/GENMON"
-    #"build/usr/BOOKMARKS"
-    #"build/usr/SCREENSHOOTER"
-    "build/env/SETUP"
-    #"build/appearance/GTK"
-    #"build/appearance/WM"
-    #"build/appearance/ICONS"
-    #"build/appearance/FONTS"
-    #"build/appearance/CURSOR"
-    #"build/appearance/TERMINAL"
-    #"build/appearance/WALLPAPER"
-    #"build/appearance/XFCE"
-    #"build/appearance/LIGHTDM"
-    #"build/plugins/PICOM"
-    #"build/plugins/EWW"
-    #"build/plugins/DOCK"
-    #"build/plugins/FINDEX"
-    #"build/plugins/SCREENLOCK"
+    #"$CORE/UPDATE"
+    #"$CORE/PACKAGES"
+    #"$CORE/PATH"
+    #"$CORE/RUST"
+    
+    #"$CORE/SETUP"
+    #"$ENV/SETUP"
+    "$USR/SETUP"
+    #"$APPEARANCE/SETUP"
+    
+    #"$APPEARANCE/GTK"
+    #"$APPEARANCE/WM"
+    #"$APPEARANCE/ICONS"
+    #"$APPEARANCE/FONTS"
+    #"$APPEARANCE/CURSOR"
+    #"$APPEARANCE/TERMINAL"
+    #"$APPEARANCE/WALLPAPER"
+    #"$APPEARANCE/XFCE"
+    #"$APPEARANCE/LIGHTDM"
+    #"$PLUGINS/PICOM"
+    #"$PLUGINS/EWW"
+    #"$PLUGINS/DOCK"
+    #"$PLUGINS/FINDEX"
+    #"$PLUGINS/SCREENLOCK"
 )
 
 # Execute each script and reload only once at the end

@@ -1,0 +1,48 @@
+#!/bin/bash
+
+source etc/SETTINGS
+
+######################################################################################
+## Setup user theme
+######################################################################################
+echo -e "$LB$D Setting up Kali Yuga Appearance...$LB$END"
+######################################################################################
+
+BUILD() {
+    DIRECTORY=$1
+
+    # Check if the directory exists
+    if [ ! -d "$DIRECTORY" ]; then
+        echo "Directory $DIRECTORY does not exist."
+        exit 1
+    fi
+
+    # Get the current script's full path
+    CURRENT_SCRIPT=$(realpath "$0")
+
+    # Make all non-dot files executable, excluding the current script itself
+    for file in "$DIRECTORY"/*; do
+        if [ -f "$file" ] && [[ "$(basename "$file")" != .* ]] && [[ "$file" != "$CURRENT_SCRIPT" ]]; then
+            chmod +x "$file"
+        fi
+    done
+
+    # Loop through all files in the directory, excluding the current script itself
+    for file in "$DIRECTORY"/*; do
+        # Check if the file is executable and not the current script itself
+        if [ -x "$file" ] && [ -f "$file" ] && [[ "$file" != "$CURRENT_SCRIPT" ]]; then
+            echo "Running $file..."
+            # Execute the file
+            "$file"
+            # Check the exit status of the command
+            if [ $? -ne 0 ]; then
+                echo "Error: $file exited with a non-zero status."
+            else
+                echo "$file ran successfully."
+            fi
+        fi
+    done
+}
+
+# Call the BUILD function, to exclude any file from being executed simply add a dot in its name (make it hidden)
+BUILD $APPEARANCE

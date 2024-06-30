@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source etc/SETTINGS
+
+######################################################################################
+## Configure Eww Widget
+######################################################################################
+echo -e "$LB$D Setting up the EWW Widget...$LB$END"
+######################################################################################
+
+git clone https://github.com/elkowar/eww $TMP/eww > /dev/null 2>&1
+
+cd $TMP/eww
+cargo build --release
+sudo cp target/release/eww /usr/bin
+eww open --togle sidebar

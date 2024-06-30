@@ -1,0 +1,28 @@
+#!/bin/bash
+
+source etc/SETTINGS
+
+######################################################################################
+# Set the Terminal Configuration..
+######################################################################################
+echo -e "$LB$D Setting up Terminal Configurations...$LB$END"
+######################################################################################
+
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/xfce4-terminal 1000 > /dev/null 2>&1
+sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal > /dev/null 2>&1
+
+# If the above commands doesn't work uncomment the below line
+# sudo update-alternatives --config x-terminal-emulator
+
+# Disabled > moved to terminalrc configuration file inside /config/xfce4/terminal
+
+# xfconf-query -c xfce4-terminal -p /misc/cursor-shape -s "underline"
+# xfconf-query -c xfce4-terminal -p /misc/cursor-blink-mode -s "on"
+# xfconf-query -c xfce4-terminal -p /misc/copy-on-select -s true
+# xfconf-query -c xfce4-terminal -p /misc/scrollback-lines -s -1
+# xfconf-query -c xfce4-terminal -p /misc/dynamic-title -s false
+# xfconf-query -c xfce4-terminal -p /misc/show-menubar -s false
+# xfconf-query -c xfce4-terminal -p /misc/show-toolbar -s false
+# xfconf-query -c xfce4-terminal -p /misc/borderless -s false
+# xfconf-query -c xfce4-terminal -p /misc/show-scrollbar -s false
+# xfconf-query -c xfce4-terminal -p /misc/paste-notification -s false

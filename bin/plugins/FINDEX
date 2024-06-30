@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source etc/SETTINGS
+
+######################################################################################
+#  Configure Findex Search Launcher
+######################################################################################
+echo -e "$LB$D Setting up Findex Search Launcher...$LB$END"
+######################################################################################
+
+git clone https://github.com/mdgaziur/findex $TMP/findex > /dev/null 2>&1
+
+bash $TMP/findex/installer.sh -y

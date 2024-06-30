@@ -1,0 +1,62 @@
+#!/bin/bash
+
+######################################################################################
+## Define Colors and Style Variables
+######################################################################################
+
+LB='\n'                     # Line Break
+
+D='\033[36m 💎'             # Title Project      # CYAN
+M='\033[0;32m[#]\e[0m'       # Title Module       # GREEN
+
+I='\033[2m[*]\e[0m'         # Minor Information  # CURSIVE
+T='\033[94m[÷]\e[0m'        # Major Information  # OKCYAN
+
+E='\033[91m[E]\e[0m'        # Error              # OKBRED
+W='\033[93m[!]\e[0m'        # Warning            # OKYELLOW
+S='\033[92m[✔]\e[0m'       # Success            # OKGREEN
+
+END='\e[0m'
+
+######################################################################################
+## Define Directories
+######################################################################################
+
+USER=$(whoami)
+
+# SCRIPT VARIABLES
+
+TOP=$(git rev-parse --show-toplevel) # Script home directory
+
+LIB=$TOP/assets
+BIN=$TOP/bin
+TMP=$TOP/.tmp
+
+USR=$BIN/usr
+ENV=$BIN/env
+CORE=$BIN/core
+PLUGINS=$BIN/plugins
+APPEARANCE=$BIN/appearance
+
+# USER VARIABLES
+
+USR_MEDIA=$HOME/Media
+USR_WALLPAPERS=$USR_MEDIA/Wallpapers
+USR_SCREENSHOTS=$USR_MEDIA/Screenshots
+
+USR_CONFIG=$HOME/.config
+USR_LIGHTDM=$HOME/.local/share/lightdm
+USR_FONTS=/usr/share/fonts		 # $HOME/.local/share/fonts
+USR_ICONS=/usr/share/icons		 # $HOME/.local/share/icons
+USR_THEMES=/usr/share/themes		 # $HOME/.local/share/themes
+
+######################################################################################
+## Define overall appearance
+######################################################################################
+
+THEME="Kali-Yuga-Nord"
+THEME_WM=$THEME
+ICON=$THEME
+CURSOR="Kali-Yuga-Nord-WC"
+FONT="Roboto Regular 14"
+FONT_MONO="JetBrainsMono Nerd Font Regular 12"

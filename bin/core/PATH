@@ -1,0 +1,19 @@
+#!/bin/bash
+
+source etc/SETTINGS
+
+RUSTUP='export RUSTUP_HOME="$HOME/.local/share/rustup"'
+CARGO='export CARGO_HOME="$HOME/.local/share/cargo"'
+SHELL=~/.zshrc
+
+if ! grep -qF "$RUSTUP" "$SHELL"; then
+    echo >> "$SHELL"
+    echo "# RUST Configuration" >> "$SHELL"
+    echo "$RUSTUP" >> "$SHELL"
+    echo "$CARGO" >> "$SHELL"
+    echo >> "$SHELL"
+    echo 'source "$CARGO_HOME/env"' >> "$SHELL"
+    echo 'export QT_QPA_PLATFORMTHEME="qt5ct"' >> "$SHELL"
+    echo 'export QT_AUTO_SCREEN_SCALE_FACTOR=0' >> "$SHELL"
+    echo 'export PATH="$PATH:$HOME/.local/bin"' >> "$SHELL"
+fi

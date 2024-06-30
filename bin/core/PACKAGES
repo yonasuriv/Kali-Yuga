@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source etc/SETTINGS
+
+######################################################################################
+## Install all dependencies beforehand
+######################################################################################
+echo -e "$LB$D Installing all required packages and dependencies...$LB$END"
+######################################################################################
+
+sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson cmake libepoxy-dev libxcb-util-dev asciidoc mugshot xfce4-terminal qt5-style-kvantum qt5-style-kvantum-themes xfce4-dev-tools libstartup-notification0-dev libwnck-3-dev libxfce4ui-2-dev libxfce4panel-2.0-dev alsa-utils brightnessctl jq playerctl libkeybinder-3.0-dev i3lock-color neofetch

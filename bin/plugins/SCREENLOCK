@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source etc/SETTINGS
+
+######################################################################################
+#  Configure I3LOCK
+######################################################################################
+echo -e "$LB$D Setting up I3LOCK...$LB$END"
+######################################################################################
+
+sudo cp $USR_CONFIG/i3-locker/kali-yuga-i3-screen-lock /usr/bin
+
+xfconf-query --create -c xfce4-session -p /general/LockCommand -t string -s "i3-lock-everblush"
+
+# Disable light-locker screen from startup
+sudo rm -rf /etc/xdg/autostart/light-locker.desktop

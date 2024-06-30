@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source etc/SETTINGS
+
+# Define the path of the original file
+FILE="$USR_CONFIG/gtk-3.0/bookmarks"
+
+# Create or overwrite the file with the desired content
+cat << EOF > "$FILE"
+file:///home/$USER/Media
+file:///home/$USER/Documents
+file:///home/$USER/Downloads
+EOF

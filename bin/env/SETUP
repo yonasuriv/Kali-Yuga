@@ -1,0 +1,29 @@
+#!/bin/bash
+
+source etc/SETTINGS
+
+######################################################################################
+## Set up the environment
+######################################################################################
+echo -e "$LB$D Setting up Environment...$LB$END"
+######################################################################################
+
+# Create directories
+mkdir -p $TMP $USR_LIGHTDM $USR_MEDIA $USR_WALLPAPERS $USR_SCREENSHOTS # $USR_FONTS $USR_ICONS $USR_THEMES 
+
+mv $HOME/Pictures $USR_MEDIA
+mv $HOME/Music $USR_MEDIA
+mv $HOME/Videos $USR_MEDIA
+mv $HOME/Templates $USR_MEDIA
+
+# Generate a backup of the config directory
+cp -r $USR_CONFIG $USR_CONFIG-backup
+
+# Copy all required packages
+cp -r $LIB/home/. $HOME
+cp -r $LIB/config/* $USR_CONFIG
+cp -r $LIB/wallpapers/* $USR_WALLPAPERS
+
+sudo cp -r $LIB/fonts/* $USR_FONTS
+sudo cp -r $LIB/icons/* $USR_ICONS
+sudo cp -r $LIB/themes/* $USR_THEMES
